@@ -4,7 +4,12 @@ import icici.loans.carloans.A;
 import icici.loans.carloans.B;
 
 public class C extends A
-{
+{	
+	public void m1()
+	{
+		System.out.println("iam overriden m1 from C");
+	}
+	
 	public void m3()
 	{
 		System.out.println("iam m3 from C");
