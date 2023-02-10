@@ -2,9 +2,10 @@ package icici.loans.homeloans;
 
 class Parent
 {
-	public void workhard()
+	public Number workhard()
 	{
 		System.out.println("Parent : wakeup early, goto college");
+		return 0;
 	}
 	
 	public void care()
@@ -16,9 +17,10 @@ class Parent
 public class Child extends Parent
 {
 	
-	public void workhard()
+	public  Number workhard()
 	{
 		System.out.println("Child : wakeup anytime, goto anywhere");
+		return 0;
 	}
 
 	public void love()
