@@ -7,14 +7,19 @@ import java.io.FileReader;
 public class CheckedExceptionDemo 
 {
 	
-	public static void m1() throws FileNotFoundException
+	public static void m1() 
 	{
-		BufferedReader b = new BufferedReader(new FileReader("d://abc.txt"));
+		try {
+			BufferedReader b = new BufferedReader(new FileReader("d://abc.txt"));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args) 
 	{
-		
+		m1();
 	}
 
 }
