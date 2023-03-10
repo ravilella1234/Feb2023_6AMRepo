@@ -52,6 +52,8 @@ public class BaseTest
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 		}
+		
+		driver.manage().window().maximize();
 	}
 	
 	public static void navigateUrl(String url)
