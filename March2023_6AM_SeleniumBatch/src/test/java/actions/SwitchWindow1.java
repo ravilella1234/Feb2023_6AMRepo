@@ -16,6 +16,7 @@ public class SwitchWindow1
 	public static void main(String[] args) 
 	{
 		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--remote-allow-origins=*");
         option.addArguments("--remote-allow-origins=*");
 		
 		WebDriverManager.chromedriver().setup();
