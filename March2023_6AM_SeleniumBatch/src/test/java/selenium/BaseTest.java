@@ -12,6 +12,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.io.FileHandler;
@@ -67,13 +68,16 @@ public class BaseTest
 	
 	public static void launch(String browser)
 	{
-		if(p.getProperty(browser).equals("chrome")) {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--remote-allow-origins=*");
+		
+		if(browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		}else if(p.getProperty(browser).equals("firefox")) {
+			driver = new ChromeDriver(options);
+		}else if(browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
-		}else if(p.getProperty(browser).equals("ie")) {
+		}else if(browser.equals("ie")) {
 			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 		}
