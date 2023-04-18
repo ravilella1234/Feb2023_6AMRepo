@@ -12,7 +12,7 @@ import selenium.BaseTest;
 public class TestNG_003 extends BaseTest
 {
 	@Parameters("browser")
-  @BeforeMethod
+  @BeforeMethod(groups = {"regression"})
   public void startProcess(String bType) throws Exception 
   {
 	  System.out.println("BeforeMethod");
@@ -27,7 +27,7 @@ public class TestNG_003 extends BaseTest
 		test.log(Status.INFO, "Navigated to url : " + childProp.getProperty("amazonurl"));
   }
   
-  @Test
+  @Test(groups = {"regression"})
   public void amazonText() 
   {
 	  System.out.println("amazonText");
@@ -41,7 +41,7 @@ public class TestNG_003 extends BaseTest
 		test.log(Status.INFO, "Clicked on Element By Using Locator : " + orProp.getProperty("amazonsearchbutton_xpath"));
   }
 
-  @AfterMethod
+  @AfterMethod(groups = {"regression"})
   public void endProcess() 
   {
 	  System.out.println("AfterMethod");
