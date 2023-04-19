@@ -1,28 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="2" failed="0" ignored="0" total="4" passed="2">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
+    <line>
+      <![CDATA[Test Started Running :amazonText]]>
+    </line>
+    <line>
+      <![CDATA[<a href='D:\April2022WD\March2023_6AM_SeleniumBatch//failure//Wed_Apr_19_06_38_13_IST_2023.png'> <img src='D:\April2022WD\March2023_6AM_SeleniumBatch//failure//Wed_Apr_19_06_38_13_IST_2023.png' height='100' width='100'/> </a>]]>
+    </line>
+    <line>
+      <![CDATA[Test has Failed:amazonText]]>
+    </line>
+    <line>
+      <![CDATA[Expected condition failed: waiting for presence of element located by: By.name: field-keyword (tried for 30 second(s) with 500 milliseconds interval)]]>
+    </line>
   </reporter-output>
-  <suite name="Default suite" duration-ms="128" started-at="2023-04-18T01:21:59Z" finished-at="2023-04-18T01:21:59Z">
+  <suite name="Suite" duration-ms="44390" started-at="2023-04-19T01:08:13Z" finished-at="2023-04-19T01:08:57Z">
     <groups>
+      <group name="regression">
+        <method signature="TestNG_003.amazonText()[pri:0, instance:testng.TestNG_003@6fc6f14e]" name="amazonText" class="testng.TestNG_003"/>
+      </group> <!-- regression -->
     </groups>
-    <test name="Default test" duration-ms="128" started-at="2023-04-18T01:21:59Z" finished-at="2023-04-18T01:21:59Z">
-      <class name="testng.TestDependency">
-        <test-method status="PASS" signature="orange()[pri:1, instance:testng.TestDependency@192b07fd]" name="orange" duration-ms="26" started-at="2023-04-18T01:21:59Z" finished-at="2023-04-18T01:21:59Z">
+    <test name="Test" duration-ms="44390" started-at="2023-04-19T01:08:13Z" finished-at="2023-04-19T01:08:57Z">
+      <class name="testng.TestNG_003">
+        <test-method status="PASS" signature="startProcess(java.lang.String)[pri:0, instance:testng.TestNG_003@6fc6f14e]" name="startProcess" is-config="true" duration-ms="10530" started-at="2023-04-19T01:08:13Z" finished-at="2023-04-19T01:08:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- orange -->
-        <test-method status="PASS" signature="white()[pri:2, instance:testng.TestDependency@192b07fd]" name="white" duration-ms="8" started-at="2023-04-18T01:21:59Z" depends-on-methods="testng.TestDependency.orange" finished-at="2023-04-18T01:21:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- white -->
-        <test-method status="SKIP" signature="blue()[pri:3, instance:testng.TestDependency@192b07fd]" name="blue" duration-ms="4" started-at="2023-04-18T01:21:59Z" depends-on-methods="testng.TestDependency.white" finished-at="2023-04-18T01:21:59Z">
-          <exception class="org.testng.SkipException">
+        </test-method> <!-- startProcess -->
+        <test-method status="FAIL" signature="amazonText()[pri:0, instance:testng.TestNG_003@6fc6f14e]" name="amazonText" duration-ms="31116" started-at="2023-04-19T01:08:24Z" finished-at="2023-04-19T01:08:55Z">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Blue test is skipped...]]>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.name: field-keyword (tried for 30 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Blue test is skipped...
-at testng.TestDependency.blue(TestDependency.java:27)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.name: field-keyword (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:138)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+at selenium.BaseTest.isElementPresent(BaseTest.java:154)
+at selenium.BaseTest.getElement(BaseTest.java:124)
+at selenium.BaseTest.typeText(BaseTest.java:109)
+at testng.TestNG_003.amazonText(TestNG_003.java:37)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -48,44 +71,56 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='field-keyword']"}
+  (Session info: chrome=112.0.5615.86)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-JCJ8HOK', ip: '192.168.0.187', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_321'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3f4582f7cca9d70bb043036f48a0d7e8, findElement {using=name, value=field-keyword}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.86, chrome: {chromedriverVersion: 112.0.5615.49 (bd2a7bcb881c..., userDataDir: C:\Users\ravi\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:64282}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64282/devtoo..., se:cdpVersion: 112.0.5615.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3f4582f7cca9d70bb043036f48a0d7e8
+at sun.reflect.GeneratedConstructorAccessor15.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:558)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:382)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:374)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:174)
+at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:171)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+... 29 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+            <line>
+              <![CDATA[Test Started Running :amazonText]]>
+            </line>
+            <line>
+              <![CDATA[<a href='D:\April2022WD\March2023_6AM_SeleniumBatch//failure//Wed_Apr_19_06_38_13_IST_2023.png'> <img src='D:\April2022WD\March2023_6AM_SeleniumBatch//failure//Wed_Apr_19_06_38_13_IST_2023.png' height='100' width='100'/> </a>]]>
+            </line>
+            <line>
+              <![CDATA[Test has Failed:amazonText]]>
+            </line>
+            <line>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.name: field-keyword (tried for 30 second(s) with 500 milliseconds interval)]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- amazonText -->
+        <test-method status="PASS" signature="endProcess()[pri:0, instance:testng.TestNG_003@6fc6f14e]" name="endProcess" is-config="true" duration-ms="2139" started-at="2023-04-19T01:08:55Z" finished-at="2023-04-19T01:08:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- blue -->
-        <test-method status="SKIP" signature="green()[pri:4, instance:testng.TestDependency@192b07fd]" name="green" duration-ms="0" started-at="2023-04-18T01:21:59Z" depends-on-methods="testng.TestDependency.blue" finished-at="2023-04-18T01:21:59Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method TestDependency.green()[pri:4, instance:testng.TestDependency@192b07fd] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method TestDependency.green()[pri:4, instance:testng.TestDependency@192b07fd] depends on not successfully finished methods
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:888)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- green -->
-      </class> <!-- testng.TestDependency -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- endProcess -->
+      </class> <!-- testng.TestNG_003 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
