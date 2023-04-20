@@ -4,6 +4,7 @@
   <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="testng.Listener"/>
+    <listener class-name="testng.RetryListener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
